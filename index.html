@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expomotos 77 — Concessionnaire Moto Voge, Orcal, Keeway à Vert-Saint-Denis</title>
+<meta name="description" content="Expomotos 77, concessionnaire moto à Vert-Saint-Denis (77). Vente de motos neuves et d'occasion Voge, Orcal, Keeway. Atelier d'entretien et réparation. Depuis 1991.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E30613;
+  --red-dark:#C00510;
+  --black:#1A1A1A;
+  --dark:#111;
+  --white:#fff;
+  --gray:#F5F5F5;
+  --text:#333;
+  --text-light:#777;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:all .3s;background:transparent}
+nav.scrolled{background:rgba(26,26,26,0.97);backdrop-filter:blur(8px);padding:0.6rem 2rem;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.nav-logo{height:50px;transition:all .3s}
+nav.scrolled .nav-logo{height:38px}
+nav ul{list-style:none;display:flex;gap:1.8rem}
+nav a{color:#fff;text-decoration:none;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .3s}
+nav a:hover{color:var(--red)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.nav-toggle span{width:25px;height:2px;background:#fff;transition:all .3s}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(135deg,rgba(17,17,17,0.85) 0%,rgba(17,17,17,0.6) 50%,rgba(17,17,17,0.4) 100%),
+    url('img/slide6.jpg') center/cover no-repeat;
+  color:#fff;
+  overflow:hidden;
+}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,var(--black))}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:2rem 4rem}
+.hero-logo{width:240px;height:auto;margin-bottom:2rem}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1rem;text-transform:uppercase}
+.hero h1 span{color:var(--red)}
+.hero .tagline{font-size:1.1rem;font-weight:300;margin-bottom:0.5rem;opacity:0.9}
+.hero .since{font-size:0.9rem;opacity:0.6;margin-bottom:2rem}
+.hero-cta{display:inline-block;padding:14px 36px;background:var(--red);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;transition:all .3s;border:none}
+.hero-cta:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 25px rgba(227,6,19,0.4)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:0.5rem;color:var(--black)}
+.section-title span{color:var(--red)}
+.section-sub{text-align:center;color:var(--text-light);margin-bottom:3rem;font-size:0.95rem}
+.container{max-width:1100px;margin:0 auto}
+
+/* MARQUES */
+.marques{background:var(--black);color:#fff}
+.marques .section-title{color:#fff}
+.marques .section-sub{color:rgba(255,255,255,0.6)}
+.marques-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.marque-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:2rem;text-align:center;transition:all .3s}
+.marque-card:hover{background:rgba(227,6,19,0.1);border-color:var(--red);transform:translateY(-4px)}
+.marque-card h3{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:0.8rem;text-transform:uppercase}
+.marque-card p{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.6}
+.marque-card img{width:100%;max-height:180px;object-fit:contain;margin-bottom:1rem;border-radius:4px}
+
+/* SERVICES */
+.services{background:var(--gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.service-card{background:#fff;padding:2rem 1.5rem;text-align:center;border-bottom:3px solid transparent;transition:all .3s;box-shadow:0 2px 15px rgba(0,0,0,0.05)}
+.service-card:hover{border-bottom-color:var(--red);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.service-icon{font-size:2.5rem;margin-bottom:1rem}
+.service-card h3{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;text-transform:uppercase;margin-bottom:0.5rem;color:var(--black)}
+.service-card p{font-size:0.85rem;color:var(--text-light)}
+
+/* ATELIER */
+.atelier{position:relative;min-height:400px;display:flex;align-items:center;background:linear-gradient(rgba(17,17,17,0.8),rgba(17,17,17,0.85)),url('img/slide1.jpg') center/cover no-repeat;color:#fff}
+.atelier-content{max-width:600px;padding:0 2rem}
+.atelier h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;text-transform:uppercase;margin-bottom:1rem}
+.atelier h2 span{color:var(--red)}
+.atelier p{font-size:1rem;line-height:1.8;opacity:0.9;margin-bottom:1.5rem}
+.atelier-cta{display:inline-block;padding:12px 30px;border:2px solid var(--red);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:all .3s}
+.atelier-cta:hover{background:var(--red);color:#fff}
+
+/* ABOUT */
+.about{background:#fff}
+.about-flex{display:flex;gap:3rem;align-items:center}
+.about-text{flex:1}
+.about-text h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;margin-bottom:1rem;color:var(--black)}
+.about-text p{margin-bottom:1rem;font-size:0.95rem;color:var(--text)}
+.about-stats{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.stat{text-align:center;padding:1.5rem;background:var(--gray);transition:all .3s}
+.stat:hover{background:rgba(227,6,19,0.05)}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:900;color:var(--red);line-height:1}
+.stat-label{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-top:0.5rem}
+
+/* CONTACT */
+.contact{background:var(--black);color:#fff}
+.contact .section-title{color:#fff}
+.contact .section-sub{color:rgba(255,255,255,0.6)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.contact-card{padding:2rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);text-align:center;transition:all .3s}
+.contact-card:hover{border-color:var(--red)}
+.contact-icon{font-size:2rem;margin-bottom:1rem;color:var(--red)}
+.contact-card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;text-transform:uppercase;margin-bottom:0.8rem}
+.contact-card p{font-size:0.9rem;color:rgba(255,255,255,0.7)}
+.contact-card a{color:var(--red);text-decoration:none;transition:color .3s}
+.contact-card a:hover{color:#ff4444}
+
+/* MAP */
+.map{width:100%;height:350px;border:none;filter:grayscale(0.3)}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.8rem}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(26,26,26,0.98);flex-direction:column;padding:1rem 2rem;gap:1rem}
+  nav ul.open{display:flex}
+  .nav-toggle{display:flex}
+  .hero-content{padding:2rem 1.5rem;margin-top:2rem}
+  .hero-logo{width:180px}
+  .hero h1{font-size:1.8rem}
+  .about-flex{flex-direction:column}
+  .about-stats{grid-template-columns:1fr 1fr}
+  section{padding:3rem 1.5rem}
+  .atelier-content{padding:0 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <img src="img/logo.png" alt="Expomotos 77" class="nav-logo">
+  <div class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+  <ul>
+    <li><a href="#marques">Marques</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#atelier">Atelier</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="img/logo.png" alt="Expomotos 77" class="hero-logo">
+    <h1>Votre concessionnaire <span>moto</span> en Seine-et-Marne</h1>
+    <p class="tagline">Voge &middot; Orcal &middot; Keeway</p>
+    <p class="since">Depuis 1991 à Vert-Saint-Denis</p>
+    <a href="#contact" class="hero-cta">Nous contacter</a>
+  </div>
+</section>
+
+<!-- MARQUES -->
+<section class="marques" id="marques">
+  <div class="container">
+    <h2 class="section-title">Nos <span>marques</span></h2>
+    <p class="section-sub">Des motos pour chaque style de pilotage</p>
+    <div class="marques-grid">
+      <div class="marque-card">
+        <img src="img/voge-dsx.jpg" alt="Voge 900 DSX">
+        <h3>Voge</h3>
+        <p>Trail, roadster, sportive : la gamme Voge allie performance et accessibilité. Du 300 au 900 cm³, trouvez la moto qui vous correspond.</p>
+      </div>
+      <div class="marque-card">
+        <img src="img/orcal-astor.png" alt="Orcal Astor 125">
+        <h3>Orcal</h3>
+        <p>L'élégance à la française. Motos classiques et néo-rétro de 50 à 125 cm³, idéales pour la ville et les balades.</p>
+      </div>
+      <div class="marque-card">
+        <h3>Keeway</h3>
+        <p>Scooters et motos urbaines au meilleur rapport qualité-prix. Une solution fiable pour vos déplacements quotidiens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">Nos <span>services</span></h2>
+    <p class="section-sub">Un accompagnement complet pour votre deux-roues</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏍️</div>
+        <h3>Vente neuf</h3>
+        <p>Toute la gamme Voge, Orcal et Keeway disponible en concession</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Entretien</h3>
+        <p>Révisions constructeur, vidanges, mises à jour</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Réparation</h3>
+        <p>Diagnostic et réparation mécanique toutes marques</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛞</div>
+        <h3>Pneumatiques</h3>
+        <p>Montage et équilibrage de vos pneus moto</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3>Kit chaîne</h3>
+        <p>Remplacement chaîne, couronne et pignon</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔋</div>
+        <h3>Batterie</h3>
+        <p>Test, recharge et remplacement de batterie</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Freinage</h3>
+        <p>Plaquettes, disques, purge du circuit de freinage</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Expertise</h3>
+        <p>Expertise assurance et pré-contrôle technique</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATELIER -->
+<section class="atelier" id="atelier">
+  <div class="container">
+    <div class="atelier-content">
+      <h2>Un atelier <span>professionnel</span> à votre service</h2>
+      <p>Notre équipe de mécaniciens qualifiés prend en charge l'entretien et la réparation de votre moto, quelle que soit la marque. Prenez rendez-vous pour un diagnostic complet.</p>
+      <a href="#contact" class="atelier-cta">Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section class="about" id="apropos">
+  <div class="container">
+    <h2 class="section-title">À <span>propos</span></h2>
+    <p class="section-sub">Plus de 30 ans de passion moto</p>
+    <div class="about-flex">
+      <div class="about-text">
+        <h3>Expomotos 77, votre partenaire moto depuis 1991</h3>
+        <p>Installée à Vert-Saint-Denis en Seine-et-Marne, notre concession accompagne les motards depuis plus de trois décennies. Concessionnaire officiel Voge, Orcal et Keeway, nous proposons une large gamme de motos neuves et d'occasion adaptées à tous les profils.</p>
+        <p>Notre atelier, équipé des outils les plus récents, assure l'entretien et la réparation de votre deux-roues dans les règles de l'art. De la simple révision au diagnostic complet, notre équipe met son savoir-faire à votre disposition.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num">33+</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Marques distribuées</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">77</div>
+          <div class="stat-label">Seine-et-Marne</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Passion moto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Nous <span>contacter</span></h2>
+    <p class="section-sub">Venez nous rendre visite ou écrivez-nous</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h3>Adresse</h3>
+        <p>39 route départementale 306<br>77240 Vert-Saint-Denis</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <h3>Email</h3>
+        <p><a href="mailto:expomotos770321@orange.fr">expomotos770321@orange.fr</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🕐</div>
+        <h3>Horaires</h3>
+        <p>Mardi - Samedi : 9h - 12h / 14h - 19h<br>Fermé dimanche et lundi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=2.6050%2C48.5680%2C2.6250%2C48.5780&layer=mapnik&marker=48.5730%2C2.6150" loading="lazy"></iframe>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Expomotos 77 — Concessionnaire moto Voge, Orcal, Keeway à Vert-Saint-Denis (77)</p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const n=document.getElementById('navbar');
+  n.classList.toggle('scrolled',window.scrollY>80);
+});
+document.querySelectorAll('nav a').forEach(a=>{
+  a.addEventListener('click',()=>{document.querySelector('nav ul').classList.remove('open')});
+});
+</script>
+</body>
+</html>
